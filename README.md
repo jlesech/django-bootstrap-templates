@@ -1,17 +1,37 @@
-Dashboard Bootstrap template implementation with Django and django-bootstrap3.
+[Dashboard Bootstrap template](http://getbootstrap.com/getting-started/#examples-custom) implementation with [Django](https://www.djangoproject.com/) and [django-bootstrap3](https://github.com/dyve/django-bootstrap3).
 
-Installation
+# Requirements
 
-pip install -r requirements
+- python
+- django
+- django-bootstrap3
 
-Usage
+# Clone
 
-Requirements
+```bash
+git clone https://github.com/jlesech/django-bootstrap-templates.git
+```
 
-python
-django
-django-bootstrap3
+# Virtualenv
 
-Author
+```bash
+virtualenv venv
+source venv/bin/activate
+cd django-bootstrap-templates
+pip install -r requirements.txt
+```
 
-Licence
+# Usage
+
+```bash
+python manage.py migrate
+python manage.py runserver
+```
+
+# Author
+
+Julien Le Sech
+
+# Licence
+
+CC BY 3.0
