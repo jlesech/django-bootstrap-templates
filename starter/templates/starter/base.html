@@ -7,8 +7,9 @@
 {% block bootstrap3_extra_head %}
     <link rel="stylesheet" type="text/css" href="{% static 'starter/starter.css' %}" />
     <link rel="icon" href="{% static 'starter/favicon.ico' %}" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
 {% endblock %}
+
+{% load starter_extras %}
 
 {% block title %}Starter Template for Bootstrap{% endblock %}
 
@@ -25,13 +26,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="/starter/">Starter</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
+            <!--<ul class="nav navbar-nav">
+                <li class="active"><a href="/starter/">Home</a></li>
+                <li><a href="/starter/about/">About</a></li>
+                <li><a href="/starter/contact/">Contact</a></li>
+            </ul>-->
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="{% active request "/starter/$" %}"><a href="{% url 'starter:index' %}">Home <span class="sr-only">(current)</span></a></li>
+                <li class="{% active request "/starter/about/" %}"><a href="{% url 'starter:about' %}">About</a></li>
+                <li class="{% active request "/starter/contact/" %}"><a href="{% url 'starter:contact' %}">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
