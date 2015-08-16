@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^dashboard/', include('dashboard.urls', namespace='dashboard', app_name='dashboard')),
+    url(r'^starter/', include('starter.urls', namespace='starter', app_name='starter')),
 )
